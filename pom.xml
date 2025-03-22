@@ -76,12 +76,18 @@
 				<configuration>
 					<target>host</target>
 					<mainClass>frontend.Main</mainClass>
+					<!-- Building on OSX -->
 					<releaseConfiguration>
 						<skipSigning>true</skipSigning>
 						<bundleName>PasswordManager</bundleName>
 						<bundleVersion>1.0</bundleVersion>
 						<bundleShortVersion>1.0</bundleShortVersion>
 					</releaseConfiguration>
+					<!-- Building on Windows -->
+					<linkerArgs>
+						<arg>management_ext.lib</arg>
+						<arg>psapi.lib</arg>
+					</linkerArgs>
 				</configuration>
 			</plugin>
 		</plugins>
